@@ -25,7 +25,7 @@ A real-time monitoring website for SNEWS messages, displaying different types of
    cd backend
    ```
 
-2. Create a virtual environment and activate it:
+2. Create a virtual environment and activate it (or if you already have a venv for snews development you can use that venv):
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
