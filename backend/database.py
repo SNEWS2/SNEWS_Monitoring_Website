@@ -19,7 +19,6 @@ class MessageBase:
     received_time_utc = Column(DateTime)
     detector_name = Column(String)
     machine_time_utc = Column(String)
-    neutrino_time_utc = Column(String)
     is_test = Column(Integer)
 
 class SigTierArchive(Base, MessageBase):
@@ -31,14 +30,16 @@ class SigTierArchive(Base, MessageBase):
 class TimeTierArchive(Base, MessageBase):
     __tablename__ = "time_tier_archive"
     timing_series = Column(String)
+    neutrino_time_utc = Column(String)
 
 class CoincidenceTierArchive(Base, MessageBase):
     __tablename__ = "coincidence_tier_archive"
     p_val = Column(Float)
     is_firedrill = Column(Integer)
+    neutrino_time_utc = Column(String)
 
-class HeartbeatArchive(Base, MessageBase):
-    __tablename__ = "heartbeat_archive"
+class CachedHeartbeats(Base, MessageBase):
+    __tablename__ = "cached_heartbeats"
     detector_status = Column(String)
 
 def get_db():
