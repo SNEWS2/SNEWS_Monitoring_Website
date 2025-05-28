@@ -8,7 +8,7 @@ interface TableViewProps {
 }
 
 const TableView: React.FC<TableViewProps> = ({ messages }) => {
-  const [order, setOrder] = useState<'asc' | 'desc'>('asc');
+  const [order, setOrder] = useState<'asc' | 'desc'>('desc');
   const [orderBy, setOrderBy] = useState<keyof Message>('received_time_utc');
   const [page, setPage] = useState(0);
   const [selectedDetector, setSelectedDetector] = useState<string>('All');
